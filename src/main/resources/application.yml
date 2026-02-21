@@ -11,7 +11,7 @@ spring:
 eureka:
   client:
     service-url:
-      defaultZone: http://${EUREKA-SERVER:localhost}:${EUREKA_PORT:8761}/eureka/
+      defaultZone: http://${eureka-server:localhost}:${EUREKA_PORT:8761}/eureka/
 
 server:
   port: ${HELLO_SERVICE_PORT:4567}
