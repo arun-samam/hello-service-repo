@@ -2,16 +2,16 @@ spring:
   application:
     name: hello-service
   config:
-    import: optional:configserver:http://config-server:8888
+    import: optional:configserver:http://config-server:${CONFIG_PORT:8888}
   profiles:
-    active: local
+    active: ${SPRING_PROFILE_ACTIVE:local}
 
 eureka:
   client:
     service-url:
-      defaultZone: http://eureka-server:8761/eureka/
+      defaultZone: http://${EUREKA-SERVER:localhost}:${EUREKA_PORT:8761}/eureka/
 
 server:
-  port: 4567
+  port: ${HELLO_SERVICE_PORT:4567}
 
   
